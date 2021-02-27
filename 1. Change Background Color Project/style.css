@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    background-color: coral;
+    height: 100vh;
+}
+
+#change-color-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#change-color-btn{
+    background-color: #1f1d1f;
+    padding: 20px 25px;
+    color: white;
+    border: none;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#change-color-btn:hover{
+    background-color: #161515;
+}
+
