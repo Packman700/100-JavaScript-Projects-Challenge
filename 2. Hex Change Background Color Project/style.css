@@ -1,0 +1,36 @@
+body{
+    font-family: "Artifakt Element", serif;
+    margin: 0;
+    background-color: #ffffff;
+    height: 100vh;
+}
+
+#change-color{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#change-color__btn{
+    background-color: #1f1d1f;
+    padding: 20px 25px;
+    color: white;
+    border: none;
+    font-size: larger;
+    border-radius: 5px;
+}
+
+#change-color__btn:hover{
+    /* Hover is overwritten in js */
+    /*background-color: #161515;*/
+}
+
+#change-color__btn:focus{
+    outline: none;
+}
+
+#change-color__text{
+    font-size: 30px;
+}
