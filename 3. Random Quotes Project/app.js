@@ -24,22 +24,31 @@ const quotes = [
 
 let lastQuoteIndex = -1;
 
+const quote = document.querySelector("#quotation-box__text q");
+const quoteAuthor = document.querySelector("#quotation-box__text p");
+
+// SETUP //
+changeQuote(drawQuote())
+
 // LISTENERS //
 document.querySelector("#quotation-box__button").addEventListener("click", () => {
     const randomQuoteAndAuthor = drawQuote();
-    document.querySelector("#quotation-box__quote").innerText = randomQuoteAndAuthor.quote;
-    document.querySelector("#quotation-box__quote-author").innerText = randomQuoteAndAuthor.author;
+    changeQuote(randomQuoteAndAuthor);
 })
 
 // FUNCTIONS //
 function drawQuote(){
     let quoteIndex;
+    // This loop predict to return same quote 2 times
     while (true){
         quoteIndex = Math.floor(Math.random() * quotes.length);
-        if (quoteIndex !== lastQuoteIndex){
-            break;
-        }
+        if (quoteIndex !== lastQuoteIndex) break;
     }
     lastQuoteIndex = quoteIndex;
     return quotes[lastQuoteIndex];
+}
+
+function changeQuote(quoteData){
+    quote.innerText = quoteData.quote;
+    quoteAuthor.innerText = quoteData.author;
 }

@@ -13,7 +13,7 @@ body{
     /* TO CHANGE !!!*/
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 10% 1fr 10%;
+    grid-template-rows: 1fr 12%;
 
     padding: 40px;
 
@@ -22,14 +22,39 @@ body{
     background-color: #bfbfa9;
 }
 
+/* quote */
+#quotation-box__text q{
+    font-size: 20px;
+}
+
+/* quote author */
+#quotation-box__text p{
+    text-align: right;
+}
+
+/* quote button */
 #quotation-box__button{
-    justify-self: left;
+    background-color: #1f1d1f;
+    color: white;
+    border: none;
+    font-size: larger;
+    height: 100%;
 }
 
-#quotation-box__quote{
-
+#quotation-box__button:hover{
+    /* Hover is overwritten in js */
+    background-color: #161515;
 }
 
-#quotation-box__quote-author{
+#quotation-box__button:active{
+    background-color: #090909;
+    outline: none;
+}
 
+#quotation-box__button:focus{
+    outline: none;
+}
+
+#quotation-box__button{
+    font-size: 20px;
 }
