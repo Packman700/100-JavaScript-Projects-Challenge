@@ -1,0 +1,59 @@
+// Colors //
+$primaryColor: #85ff91
+$primaryColorLighter: #85FF91
+$primaryColorDarker: #2E8F37
+$secondaryColor: #8F1F43
+$secondaryColorLighter: #DB5C84
+
+$whiteColor: #ffffff
+$clackColor: #000000
+
+$buttonColor: $secondaryColorLighter
+
+body
+  margin: 0
+
+.main-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  height: 100vh
+  background-color: $primaryColor
+
+/* button */
+.btn
+  box-sizing: border-box
+  background-color: $buttonColor
+  height: 2em
+
+  border: none
+  border-radius: 0.2em
+
+  padding: 0 0.3em
+
+  font-size: 20px
+  text-align: center
+  color: $whiteColor
+
+  &:hover
+    background-color: saturate(darken($buttonColor, 5%), 2%)
+
+  &:active
+    background-color: saturate(darken($buttonColor, 10%), 5%)
+    outline: none
+
+  &:focus
+    outline: none
+
+  &--border
+    background-color: transparent
+    border: 2px solid $buttonColor
+
+    &:hover
+      border-color: transparent
+    &:active
+      border-color: transparent
+    &:focus
+      border-color: transparent
