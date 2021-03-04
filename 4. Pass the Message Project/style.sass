@@ -1,26 +1,90 @@
 // Colors //
-$primaryColor: #85ff91
-$primaryColorLighter: #85FF91
-$primaryColorDarker: #2E8F37
-$secondaryColor: #8F1F43
-$secondaryColorLighter: #DB5C84
+$primaryColor: #8F1F43
+$primaryColorLighter: #D53F6F
 
 $whiteColor: #ffffff
 $clackColor: #000000
 
-$buttonColor: $secondaryColorLighter
+$buttonColor: $primaryColorLighter
 
-body
-  margin: 0
+// Fonts //
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap')
+$primaryFont: 'Lato', sans-serif
 
-.main-container
+// Mixins //
+@mixin flex-column-horizontal-center
   display: flex
   flex-direction: column
-  justify-content: center
   align-items: center
+
+// Styles //
+body
+  margin: 0
+  font-family: $primaryFont
+
+h1
+  text-align: center
+
+.main-container
+  @include flex-column-horizontal-center
+  justify-content: center
 
   height: 100vh
   background-color: $primaryColor
+
+.hide
+  display: none
+
+.error-message
+  background-color: darken($primaryColorLighter, 10%)
+  color: $whiteColor
+  padding: 20px
+
+.window
+  @include flex-column-horizontal-center
+  background-color: $whiteColor
+  box-shadow: 5px 5px 11px 0 rgba(50, 50, 50, 0.45)
+  padding: 20px 50px
+  height: auto
+  width: auto
+
+#message-form
+  @include flex-column-horizontal-center
+  label
+    font-size: larger
+  input[type=text]
+    width: 200%
+    padding: 12px 20px
+    box-sizing: border-box
+
+// GENERAL STYLES //
+/* close button icon */
+// https://stackoverflow.com/questions/18611195/x-close-button-only-using-css
+.close
+  position: relative
+  right: -108%
+  bottom: 10px
+  width: 32px
+  height: 32px
+  opacity: 0.3
+
+  &:hover
+    opacity: 1
+
+  &:before, &:after
+    position: absolute
+    right: 15px
+    content: ''
+    height: 22px
+    width: 2px
+    background-color: #333
+
+  &:before
+    transform: rotate(45deg)
+
+  &:after
+    transform: rotate(-45deg)
+
 
 /* button */
 .btn
@@ -38,10 +102,10 @@ body
   color: $whiteColor
 
   &:hover
-    background-color: saturate(darken($buttonColor, 5%), 2%)
+    background-color: desaturate(lighten($buttonColor, 5%), 2%)
 
   &:active
-    background-color: saturate(darken($buttonColor, 10%), 5%)
+    background-color: saturate(darken($buttonColor, 8%), 4%)
     outline: none
 
   &:focus
@@ -57,3 +121,37 @@ body
       border-color: transparent
     &:focus
       border-color: transparent
+
+/* Margin */
+@for $i from 0 through 10
+  .m#{$i}
+    margin: #{$i}px
+  .ml#{$i}
+    margin-left: #{$i}px
+  .mr#{$i}
+    margin-right: #{$i}px
+  .mt#{$i}
+    margin-top: #{$i}px
+  .mb#{$i}
+    margin-bottom: #{$i}px
+  .mx#{$i}
+    margin: 0 #{$i}px
+  .my#{$i}
+    margin: #{$i}px 0
+
+/* Paddings */
+@for $i from 1 through 5
+  .p#{$i}
+    padding: #{$i}px
+  .pl#{$i}
+    padding-left: #{$i}px
+  .pr#{$i}
+    padding-right: #{$i}px
+  .pt#{$i}
+    padding-top: #{$i}px
+  .pb#{$i}
+    padding-bottom: #{$i}px
+  .px#{$i}
+    padding: 0 #{$i}px
+  .py#{$i}
+    padding: #{$i}px 0

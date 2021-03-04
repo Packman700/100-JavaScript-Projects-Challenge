@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- In this project i lerning sass and try -->
     <meta charset="UTF-8">
     <title>Project 4</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
-<body>
-    <div class="main-container">
-        <button class="btn">aasad</button>
+<body class="main-container">
+    <div class="window">
+        <h1> What massage you want to send?</h1>
+        <form id="message-form">
+            <label for="user-message" class="mb5">Your message</label>
+            <input type="text" id="user-message" class="my10" name="user-message">
+            <button type="button" class="btn mt5 mb10" name="submit">Submit</button>
+        </form>
+        <div id="error-blank-message" class="error-message hide m5">
+            <a class="close"></a>
+            <p> You can't send blank message </p>
+        </div>
+        <h2 id="last-message-header" class="mt4 mb3 hide"> Your last message: </h2>
+        <h2 id="last-message" class="my7"> </h2>
     </div>
+
 </body>
 </html>
