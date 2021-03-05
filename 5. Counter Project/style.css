@@ -93,7 +93,7 @@ button {
   text-align: center;
   color: #ffffff;
 }
-.btn:hover, .btn:focus {
+.btn:hover {
   background-color: #209e6a;
 }
 .btn:active {
