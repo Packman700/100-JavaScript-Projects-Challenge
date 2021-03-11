@@ -135,15 +135,36 @@ img{
     box-shadow: rgba(255, 255, 255, 0.2) 0 0 20px 5px;
 }
 
-.btn:hover{
-    /*ANIMACJA*/
-    background-color: #4a4a4a;
+@keyframes hover-button {
+    from {
+        background-color: inherit;
+    }
+    to {
+        background-color: var(--main-color);
+    }
 }
 
-.btn:active{
-    background-color: #212121;
+@keyframes hover-button-icon {
+    from {
+        color: var(--main-color);
+    }
+    to {
+        color: var(--white-color);
+    }
 }
 
+/*noinspection ALL*/
+.btn:is(:hover,:active,:focus)
+{
+    animation: hover-button 700ms linear 0ms 1 normal forwards;
+    outline: none;
+}
+
+/*noinspection ALL*/
+.btn:is(:hover,:active,:focus) i
+{
+    animation: hover-button-icon 700ms linear 0ms 1 normal forwards;
+}
 
 /* Font Awesome icons */
 .fas, .far{
