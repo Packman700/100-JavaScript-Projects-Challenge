@@ -1,0 +1,177 @@
+/* GLOBAL SETTINGS */
+:root{
+    --main-color: #0bec88;
+    --main-color-darker: #00864a;
+    --main-color-ligher: #acf6d6;
+    --main-color-ligher-photo: #61c197;
+    --white-color: #fff;
+    --black-color: #000;
+}
+
+body{
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--white-color);
+}
+
+img{
+    width: 100%;
+}
+
+/* TOPOGRAPHY */
+
+/* POSITION */
+.main-container,
+.photo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header, .opinion-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.opinion-box-with-buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OTHER ATTRIBUTES */
+
+.main-container{
+    min-height: 100vh;
+    background: url("photos/background2.jpg") no-repeat center;
+    background-size: cover;
+    flex-direction: column;
+}
+
+.header{
+    margin-bottom: 90px;
+    backdrop-filter: blur(2px);
+}
+
+.header>h2{
+    margin: 0 0 12px 0;
+    color: var(--main-color);
+    font-weight: 200;
+}
+
+.header>h1{
+    margin: 0 0 0 0;
+    font-weight: 500;
+}
+
+.opinion-box-with-buttons{
+    max-width: 750px;
+    margin: 0 20px 40px 20px;
+}
+
+/* Opinion box */
+.opinion-box{
+    min-width: 375px;
+    box-sizing: border-box;
+    border: var(--main-color-ligher) solid 1px;
+    border-radius: 5px;
+    margin: 0 20px;
+    padding: 20px 30px 25px 20px;
+    backdrop-filter: blur(1px);
+    box-shadow: rgba(255, 255, 255, 0.2) 0 0 20px;
+}
+
+    @media (max-width: 480px){
+        /* Fix opinion-box going behind screen */
+        .opinion-box{
+            min-width: 0;
+        }
+    }
+
+    @media (max-width: 350px){
+        /* Fix buttons going behind screen */
+        .opinion-box{
+            margin: 0 8px;
+        }
+    }
+
+.opinion-box__name{
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.opinion-box__stars{
+    margin: 0 0 10px 0;
+}
+
+.opinion-box__photo{
+    --photo-shift: 80px;
+    position: relative;
+    top: calc(-1 * var(--photo-shift));
+    margin-bottom: calc(-1 * var(--photo-shift));
+    border:  var(--main-color-ligher-photo) 2px solid;
+    border-radius: 50%;
+    width: 150px;
+    filter: sepia(50%);
+}
+
+.opinion-box__comment{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn{
+    background-color: transparent;
+    border: var(--main-color) 1px solid;
+    padding: 15px 10px;
+    border-radius: 100%;
+    text-align: center;
+    backdrop-filter: blur(1px);
+    box-shadow: rgba(255, 255, 255, 0.2) 0 0 20px 5px;
+}
+
+.btn:hover{
+    /*ANIMACJA*/
+    background-color: #4a4a4a;
+}
+
+.btn:active{
+    background-color: #212121;
+}
+
+
+/* Font Awesome icons */
+.fas, .far{
+    color: var(--white-color);
+    font-size: 1.7em;
+}
+
+.fa-star, .fa-star-half-alt{
+    color: var(--main-color);
+}
+
+    @media (max-width: 380px){
+        /* Fix overflow stars */
+        .fa-star, .fa-star-half-alt{
+            font-size: 25px;
+        }
+    }
+
+.fa-quote-left{
+    color: var(--main-color);
+    font-size: 35px;
+
+}
+
+.fa-chevron-right, .fa-chevron-left{
+    color: var(--main-color);
+}
+/* Margin */
+.mt5{
+    margin-top: 5px;
+}
