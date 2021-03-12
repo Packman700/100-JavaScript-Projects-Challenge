@@ -49,13 +49,21 @@ img{
 
 .main-container{
     min-height: 100vh;
+    flex-direction: column;
+}
+@media (max-width: 711px) {
+    .main-container{
+        padding-top: 25px;
+    }
+}
+
+.main-container-photo{
     background: url("photos/background2.jpg") no-repeat center;
     background-size: cover;
-    flex-direction: column;
 }
 
 .header{
-    margin-bottom: 90px;
+    padding-top: 50px;
     backdrop-filter: blur(2px);
 }
 
