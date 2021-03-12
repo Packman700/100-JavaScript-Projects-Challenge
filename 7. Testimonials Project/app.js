@@ -40,6 +40,7 @@ var OpinionBox = /** @class */ (function () {
         this._comment = opinionBoxWithButtons.querySelector('.opinion-box__comment');
     }
     OpinionBox.prototype.init = function () {
+        this._updateOpinionBox();
         // Add Event listeners
         var leftButton = this._opinionBoxWithButtons.querySelector('.btn-left');
         var rightButton = this._opinionBoxWithButtons.querySelector('.btn-right');

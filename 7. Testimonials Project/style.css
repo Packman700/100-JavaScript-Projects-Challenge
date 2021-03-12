@@ -1,17 +1,20 @@
 /* GLOBAL SETTINGS */
 :root{
     --main-color: #0bec88;
+    --main-color-rgb-values: 11,236,136;
     --main-color-darker: #00864a;
     --main-color-ligher: #acf6d6;
     --main-color-ligher-photo: #61c197;
     --white-color: #fff;
     --black-color: #000;
+    --button-shadow: rgba(255, 255, 255, 0.2) 0 0 20px 5px;
 }
 
 body{
     margin: 0;
     font-family: 'Ubuntu', sans-serif;
     color: var(--white-color);
+    overflow: overlay;
 }
 
 img{
@@ -68,18 +71,36 @@ img{
 }
 
 .opinion-box-with-buttons{
-    max-width: 750px;
+    width: 60vw;
     margin: 0 20px 40px 20px;
 }
 
+    @media (max-width: 800px) {
+        .opinion-box-with-buttons{
+            width: 70vw;
+        }
+    }
+
+    @media (max-width: 610px) {
+        .opinion-box-with-buttons{
+            width: 80vw;
+        }
+    }
+
+    @media (max-width: 433px) {
+        .opinion-box-with-buttons{
+            width: 90vw;
+        }
+    }
+
 /* Opinion box */
 .opinion-box{
-    min-width: 375px;
+    width: 100%;
     box-sizing: border-box;
     border: var(--main-color-ligher) solid 1px;
     border-radius: 5px;
     margin: 0 20px;
-    padding: 20px 30px 25px 20px;
+    padding: 20px 20px 25px;
     backdrop-filter: blur(1px);
     box-shadow: rgba(255, 255, 255, 0.2) 0 0 20px;
 }
@@ -121,7 +142,11 @@ img{
 
 .opinion-box__comment{
     font-size: 18px;
+    max-height: 190px;
     font-weight: 600;
+    width: auto;
+    text-align: center;
+    overflow: auto;
 }
 
 /* Buttons */
@@ -132,7 +157,7 @@ img{
     border-radius: 100%;
     text-align: center;
     backdrop-filter: blur(1px);
-    box-shadow: rgba(255, 255, 255, 0.2) 0 0 20px 5px;
+    box-shadow: var(--button-shadow);
 }
 
 @keyframes hover-button {
@@ -154,16 +179,20 @@ img{
 }
 
 /*noinspection ALL*/
-.btn:is(:hover,:active,:focus)
+.btn:is(:hover,:active)
 {
     animation: hover-button 700ms linear 0ms 1 normal forwards;
-    outline: none;
 }
 
 /*noinspection ALL*/
-.btn:is(:hover,:active,:focus) i
+.btn:is(:hover,:active) i
 {
     animation: hover-button-icon 700ms linear 0ms 1 normal forwards;
+}
+
+.btn:focus{
+    outline: none;
+    box-shadow: var(--button-shadow), 0 0 5px 2px var(--main-color);
 }
 
 /* Font Awesome icons */
@@ -195,4 +224,28 @@ img{
 /* Margin */
 .mt5{
     margin-top: 5px;
+}
+
+/*Scrollbar*/
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.4) rgba(var(--main-color-rgb-values),0.8);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.2);
+    /*opacity: 0.1;*/
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.4);
+    opacity: 1;
+    border-radius: 20px;
+    border: 3px rgba(var(--main-color-rgb-values),0.8) solid ;
 }

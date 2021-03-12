@@ -53,6 +53,7 @@ class OpinionBox {
     }
 
     init() {
+        this._updateOpinionBox();
         // Add Event listeners
         let leftButton: HTMLElement = this._opinionBoxWithButtons.querySelector('.btn-left');
         let rightButton: HTMLElement = this._opinionBoxWithButtons.querySelector('.btn-right');
