@@ -1,0 +1,1 @@
+In this and next projects I use done HTML and CSS because I want to look how is working on someone else's code
